@@ -1,0 +1,51 @@
+<%# Optional notice display – uncomment if needed %>
+<%# <p style="color: green"><%= notice %></p> %>
+
+<% content_for :title, "Friends" %>
+
+<h1>Friends List</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>John</td>
+      <td>Doe</td>
+      <td>@social</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="friends">
+  <% @friends.each do |friend| %>
+    <%= render friend %>
+    <p>
+      <%= link_to "Show this friend", friend %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New friend", new_friend_path, class: "btn btn-primary mt-3", class = btn btn-dark %>
+
+
+#use ruby if frd.user= curr.user show edit and destroy option else not
